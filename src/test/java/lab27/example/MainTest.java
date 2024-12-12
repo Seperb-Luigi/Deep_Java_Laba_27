@@ -1,6 +1,7 @@
 package lab27.example;
 
 import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -13,7 +14,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class MainTest {
 
-    private final String filePath = "test.txt";
+    private final String filePath = "src/TDir/test.txt";
 
     @BeforeEach
     public void setup() throws IOException {
@@ -30,16 +31,16 @@ public class MainTest {
     @Test
     public void testReadFileContent() throws IOException {
         // Записываем данные в файл
-        String expectedContent = "Привет, мир!\nКак дела?\n";
+        String expectedContent = "SHALOM\n";
         try (FileWriter writer = new FileWriter(filePath)) {
             writer.write(expectedContent);
         }
 
         // Читаем данные из файла
         String actualContent = Main.readFileContent(filePath);
-
+        System.out.print(actualContent);
         // Проверяем, что содержимое файла соответствует ожидаемому
-        assertEquals(expectedContent, actualContent, "Содержимое файла должно совпадать с ожидаемым.");
+        Assertions.assertEquals(expectedContent, actualContent, "Содержимое файла должно совпадать с ожидаемым.");
     }
 
     @Test

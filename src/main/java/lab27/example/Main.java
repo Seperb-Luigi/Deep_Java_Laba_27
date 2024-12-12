@@ -7,7 +7,7 @@ import java.io.IOException;
 public class Main {
     public static void main(String[] args) {
         // Путь к файлу
-        String filePath = "123qweq.txt";
+        String filePath = "src/TDir/file.txt";
 
         // Читаем и выводим содержимое файла в консоль
         try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
